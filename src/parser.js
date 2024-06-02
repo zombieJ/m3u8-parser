@@ -454,6 +454,7 @@ export default class Parser extends Stream {
               mediaGroup[entry.attributes.NAME] = rendition;
             },
             discontinuity() {
+              key = null;
               currentTimeline += 1;
               currentUri.discontinuity = true;
               this.manifest.discontinuityStarts.push(uris.length);
